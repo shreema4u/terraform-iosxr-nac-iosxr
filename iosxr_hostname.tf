@@ -3,3 +3,4 @@ resource "iosxr_hostname" "hostname" {
   device   = each.value.name
 
   system_network_name                         = try(local.device_config[each.value.name].hostname, local.defaults.iosxr.configuration.hostname, null)
+}
