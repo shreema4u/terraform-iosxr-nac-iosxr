@@ -1,0 +1,7 @@
+defaults:
+  iosxr:
+    devices:
+      configuration:
+        interfaces:
+          ethernets:
+            admin_state: true
