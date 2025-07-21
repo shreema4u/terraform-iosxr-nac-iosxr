@@ -1,0 +1,12 @@
+*.log
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.envrc
+tflint.hcl
+.venv
+venv
+requirements.txt
+pyproject.toml
+uv.lock

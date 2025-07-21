@@ -48,8 +48,8 @@ locals {
   }
 
   provider_devices = [for device in local.devices : {
-    name    = device.name
-    host    = device.host
+    name = device.name
+    host = device.host
   }]
 }
 
