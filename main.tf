@@ -1,9 +1,9 @@
 locals {
-  iosxr                   = try(local.model.iosxr, {})
-  global                  = try(local.iosxr.global, [])
-  devices                 = try(local.iosxr.devices, [])
-  device_groups           = try(local.iosxr.device_groups, [])
-  interface_groups        = try(local.iosxr.interface_groups, [])
+  iosxr         = try(local.model.iosxr, {})
+  global        = try(local.iosxr.global, [])
+  devices       = try(local.iosxr.devices, [])
+  device_groups = try(local.iosxr.device_groups, [])
+  //  interface_groups        = try(local.iosxr.interface_groups, [])
   configuration_templates = try(local.iosxr.configuration_templates, [])
 
   device_group_config_template_variables = { for dg in local.device_groups :

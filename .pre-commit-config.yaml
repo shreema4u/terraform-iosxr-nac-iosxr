@@ -7,3 +7,11 @@ repos:
         args:
           - --args=-recursive
       - id: terraform_tflint
+
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.18.0
+    hooks:
+      - id: terraform-docs-system
+        args: ["./examples/system"]
+      - id: terraform-docs-system
+        args: ["."]
