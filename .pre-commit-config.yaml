@@ -15,3 +15,4 @@ repos:
         args: ["./examples/system"]
       - id: terraform-docs-system
         args: ["."]
+
