@@ -6,5 +6,4 @@ resource "iosxr_segment_routing" "segment_routing" {
   global_block_upper_bound = try(local.device_config[each.value.name].segment_routing.global_block_upper_bound, local.defaults.iosxr.configuration.segment_routing.global_block_upper_bound, null)
   local_block_lower_bound  = try(local.device_config[each.value.name].segment_routing.local_block_lower_bound, local.defaults.iosxr.configuration.segment_routing.local_block_lower_bound, null)
   local_block_upper_bound  = try(local.device_config[each.value.name].segment_routing.local_block_upper_bound, local.defaults.iosxr.configuration.segment_routing.local_block_upper_bound, null)
-  delete_mode              = try(local.device_config[each.value.name].segment_routing.delete_mode, local.defaults.iosxr.configuration.segment_routing.delete_mode, null)
 }
