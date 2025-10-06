@@ -1,14 +1,14 @@
 locals {
   device_prefix_sets = flatten([
     for device in local.devices : [
-      for prefix_set in try(local.device_config[device.name].prefix_set, local.defaults.iosxr.configuration.prefix_set, []) : {
+      for prefix_set in try(local.device_config[device.name].prefix_set, []) : {
         device_name = device.name
-        set_name    = try(prefix_set.set_name, local.defaults.iosxr.configuration.prefix_set_set_name, null)
-        rpl         = try(prefix_set.rpl, local.defaults.iosxr.configuration.prefix_set_rpl, null)
+        set_name    = try(prefix_set.set_name, local.defaults.iosxr.configuration.prefix_set.set_name, null)
+        rpl         = try(prefix_set.rpl, local.defaults.iosxr.configuration.prefix_set.rpl, null)
         key         = try("${device.name}-${prefix_set.set_name}", null)
       }
-      if try(prefix_set.set_name, local.defaults.iosxr.configuration.prefix_set_set_name, null) != null &&
-      try(prefix_set.rpl, local.defaults.iosxr.configuration.prefix_set_rpl, null) != null
+      if try(prefix_set.set_name, local.defaults.iosxr.configuration.prefix_set.set_name, null) != null &&
+      try(prefix_set.rpl, local.defaults.iosxr.configuration.prefix_set.rpl, null) != null
     ]
   ])
 }
