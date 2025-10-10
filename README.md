@@ -17,7 +17,7 @@ Configuring an IOS-XR hostname configuration using YAML:
 iosxr:
   devices:
     - name: router-1
-      host: 10.122.20.77:2627
+      host: 1.2.3.4
       configuration:
         hostname: router-1
 
