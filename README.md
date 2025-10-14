@@ -30,6 +30,7 @@ module "iosxr" {
   source  = "netascode/nac-iosxr/iosxr"
   version = ">= 0.1.0"
 
+
   yaml_files = ["system.nac.yaml"]
 }
 ```
@@ -60,6 +61,7 @@ module "iosxr" {
 
 | Name | Type |
 |------|------|
+| [iosxr_as_path_set.as_path_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/as_path_set) | resource |
 | [iosxr_banner.banner](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/banner) | resource |
 | [iosxr_cdp.cdp](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/cdp) | resource |
 | [iosxr_class_map_qos.class_map_qos](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/class_map_qos) | resource |
