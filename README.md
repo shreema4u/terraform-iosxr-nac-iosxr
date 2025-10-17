@@ -88,6 +88,7 @@ module "iosxr" {
 | [iosxr_pce.pce](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/pce) | resource |
 | [iosxr_policy_map_qos.policy_map_qos](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/policy_map_qos) | resource |
 | [iosxr_prefix_set.prefix_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/prefix_set) | resource |
+| [iosxr_route_policy.route_policy](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/route_policy) | resource |
 | [iosxr_router_hsrp_interface.router_hsrp_interface](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/router_hsrp_interface) | resource |
 | [iosxr_router_ospf.router_ospf](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/router_ospf) | resource |
 | [iosxr_router_static_ipv4_unicast.router_static_ipv4_unicast](https://registry.terraform.io/providers/CiscoDevNet/iosxr/latest/docs/resources/router_static_ipv4_unicast) | resource |
