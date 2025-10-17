@@ -5,6 +5,7 @@ locals {
         device_name       = device.name
         key               = "${device.name}-${route_policy.route_policy_name}"
         route_policy_name = try(route_policy.route_policy_name, local.defaults.iosxr.configuration.route_policy.route_policy_name, null)
+        rpl               = try(route_policy.rpl, local.defaults.iosxr.configuration.route_policy.rpl, null)
       }
     ]
 
