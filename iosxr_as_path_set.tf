@@ -5,7 +5,7 @@ locals {
         device_name = device.name
         set_name    = try(as_path_set.set_name, local.defaults.iosxr.configuration.as_path_set.set_name, null)
         rpl         = try(as_path_set.rpl, local.defaults.iosxr.configuration.as_path_set.rpl, null)
-        key         = try("${device.name}-${as_path_set.set_name}", null)
+        key         = "${device.name}-${as_path_set.set_name}"
       }
       if try(as_path_set.set_name, local.defaults.iosxr.configuration.as_path_set.set_name, null) != null &&
       try(as_path_set.rpl, local.defaults.iosxr.configuration.as_path_set.rpl, null) != null
