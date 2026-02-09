@@ -84,6 +84,7 @@ module "iosxr" {
 | [iosxr_esi_set.esi_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/esi_set) | resource |
 | [iosxr_evpn.evpn](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/evpn) | resource |
 | [iosxr_evpn_evi.evpn_evi](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/evpn_evi) | resource |
+| [iosxr_evpn_interface.evpn_interface](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/evpn_interface) | resource |
 | [iosxr_extcommunity_cost_set.extcommunity_cost_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/extcommunity_cost_set) | resource |
 | [iosxr_extcommunity_opaque_set.extcommunity_opaque_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/extcommunity_opaque_set) | resource |
 | [iosxr_flow_monitor_map.flow_monitor_map](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/flow_monitor_map) | resource |
@@ -139,6 +140,7 @@ module "iosxr" {
 | [iosxr_router_bgp_vrf_address_family.ipv6_unicast](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_bgp_vrf_address_family) | resource |
 | [iosxr_router_bgp_vrf_neighbor_address_family.router_bgp_vrf_neighbor_address_family](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_bgp_vrf_neighbor_address_family) | resource |
 | [iosxr_router_hsrp_interface.router_hsrp_interface](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_hsrp_interface) | resource |
+| [iosxr_router_hsrp_interface_ipv4_group_v2.router_hsrp_interface_ipv4_group_v2](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_hsrp_interface_ipv4_group_v2) | resource |
 | [iosxr_router_isis.router_isis](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_isis) | resource |
 | [iosxr_router_isis_address_family.ipv4_multicast](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_isis_address_family) | resource |
 | [iosxr_router_isis_address_family.ipv4_unicast](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_isis_address_family) | resource |
@@ -161,6 +163,7 @@ module "iosxr" {
 | [iosxr_router_static_vrf_ipv6_multicast.router_static_vrf_ipv6_multicast](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_static_vrf_ipv6_multicast) | resource |
 | [iosxr_router_static_vrf_ipv6_unicast.router_static_vrf_ipv6_unicast](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_static_vrf_ipv6_unicast) | resource |
 | [iosxr_router_vrrp_interface.router_vrrp_interface](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_vrrp_interface) | resource |
+| [iosxr_router_vrrp_interface_ipv6.router_vrrp_interface_ipv6](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/router_vrrp_interface_ipv6) | resource |
 | [iosxr_segment_routing.segment_routing](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/segment_routing) | resource |
 | [iosxr_segment_routing_te.segment_routing_te](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/segment_routing_te) | resource |
 | [iosxr_segment_routing_v6.segment_routing_v6](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.0/docs/resources/segment_routing_v6) | resource |
