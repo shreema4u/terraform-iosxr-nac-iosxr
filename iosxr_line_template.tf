@@ -46,7 +46,7 @@ locals {
         width                       = try(template.width, local.defaults.iosxr.devices.configuration.line_templates.width, null)
         users_group = try(length(template.users_group) == 0, true) ? null : [
           for group in template.users_group : {
-            group_name = try(group.group_name, null)
+            group_name = try(group.group_name, local.defaults.iosxr.devices.configuration.line_templates.users_group.group_name, null)
           }
         ]
       }
