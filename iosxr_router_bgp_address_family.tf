@@ -2,7 +2,7 @@ locals {
   bgp_address_family_ipv4_unicast = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "ipv4_unicast") ? [{
+      try(bgp_process.address_family.ipv4_unicast, null) != null ? [{
         key                                                            = format("%s/%s/ipv4-unicast", device.name, bgp_process.as_number)
         device_name                                                    = device.name
         as_number                                                      = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -335,7 +335,7 @@ locals {
   bgp_address_family_ipv6_unicast = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "ipv6_unicast") ? [{
+      try(bgp_process.address_family.ipv6_unicast, null) != null ? [{
         key                                                            = format("%s/%s/ipv6-unicast", device.name, bgp_process.as_number)
         device_name                                                    = device.name
         as_number                                                      = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -660,7 +660,7 @@ locals {
   bgp_address_family_vpnv4_unicast = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "vpnv4_unicast") ? [{
+      try(bgp_process.address_family.vpnv4_unicast, null) != null ? [{
         key                                                              = format("%s/%s/vpnv4-unicast", device.name, bgp_process.as_number)
         device_name                                                      = device.name
         as_number                                                        = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -816,7 +816,7 @@ locals {
   bgp_address_family_vpnv6_unicast = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "vpnv6_unicast") ? [{
+      try(bgp_process.address_family.vpnv6_unicast, null) != null ? [{
         key                                                              = format("%s/%s/vpnv6-unicast", device.name, bgp_process.as_number)
         device_name                                                      = device.name
         as_number                                                        = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -968,7 +968,7 @@ locals {
   bgp_address_family_vpnv4_multicast = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "vpnv4_multicast") ? [{
+      try(bgp_process.address_family.vpnv4_multicast, null) != null ? [{
         key                                     = format("%s/%s/vpnv4-multicast", device.name, bgp_process.as_number)
         device_name                             = device.name
         as_number                               = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -1069,7 +1069,7 @@ locals {
   bgp_address_family_vpnv6_multicast = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "vpnv6_multicast") ? [{
+      try(bgp_process.address_family.vpnv6_multicast, null) != null ? [{
         key                                     = format("%s/%s/vpnv6-multicast", device.name, bgp_process.as_number)
         device_name                             = device.name
         as_number                               = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -1169,7 +1169,7 @@ locals {
   bgp_address_family_l2vpn_evpn = flatten([
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) :
-      contains(keys(try(bgp_process.address_family, {})), "l2vpn_evpn") ? [{
+      try(bgp_process.address_family.l2vpn_evpn, null) != null ? [{
         key                                     = format("%s/%s/l2vpn-evpn", device.name, bgp_process.as_number)
         device_name                             = device.name
         as_number                               = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)

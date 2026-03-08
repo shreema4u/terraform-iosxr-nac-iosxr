@@ -3,7 +3,7 @@ locals {
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) : [
         for vrf in try(bgp_process.vrfs, []) :
-        contains(keys(try(vrf.address_family, {})), "ipv4_unicast") ? [{
+        try(vrf.address_family.ipv4_unicast, null) != null ? [{
           key                                                      = format("%s/%s/%s/ipv4-unicast", device.name, bgp_process.as_number, vrf.vrf_name)
           device_name                                              = device.name
           as_number                                                = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -279,7 +279,7 @@ locals {
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) : [
         for vrf in try(bgp_process.vrfs, []) :
-        contains(keys(try(vrf.address_family, {})), "ipv6_unicast") ? [{
+        try(vrf.address_family.ipv6_unicast, null) != null ? [{
           key                                                      = format("%s/%s/%s/ipv6-unicast", device.name, bgp_process.as_number, vrf.vrf_name)
           device_name                                              = device.name
           as_number                                                = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -554,7 +554,7 @@ locals {
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) : [
         for vrf in try(bgp_process.vrfs, []) :
-        contains(keys(try(vrf.address_family, {})), "ipv4_multicast") ? [{
+        try(vrf.address_family.ipv4_multicast, null) != null ? [{
           key                                           = format("%s/%s/%s/ipv4-multicast", device.name, bgp_process.as_number, vrf.vrf_name)
           device_name                                   = device.name
           as_number                                     = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
@@ -764,7 +764,7 @@ locals {
     for device in local.devices : [
       for bgp_process in try(local.device_config[device.name].routing.bgp, []) : [
         for vrf in try(bgp_process.vrfs, []) :
-        contains(keys(try(vrf.address_family, {})), "ipv6_multicast") ? [{
+        try(vrf.address_family.ipv6_multicast, null) != null ? [{
           key                                           = format("%s/%s/%s/ipv6-multicast", device.name, bgp_process.as_number, vrf.vrf_name)
           device_name                                   = device.name
           as_number                                     = try(bgp_process.as_number, local.defaults.iosxr.devices.configuration.routing.bgp.as_number, null)
