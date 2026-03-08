@@ -52,13 +52,9 @@ locals {
           bgp_origin_as_validation_time                        = try(vrf.bgp_origin_as_validation_time, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.bgp_origin_as_validation_time, null)
           bfd_minimum_interval                                 = try(vrf.bfd_minimum_interval, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.bfd_minimum_interval, null)
           bfd_multiplier                                       = try(vrf.bfd_multiplier, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.bfd_multiplier, null)
-          rd_auto                                              = try(vrf.rd_auto, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_auto, null)
-          rd_two_byte_as_number                                = try(vrf.rd_two_byte_as_number, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_two_byte_as_number, null)
-          rd_two_byte_as_index                                 = try(vrf.rd_two_byte_as_index, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_two_byte_as_index, null)
-          rd_four_byte_as_number                               = try(vrf.rd_four_byte_as_number, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_four_byte_as_number, null)
-          rd_four_byte_as_index                                = try(vrf.rd_four_byte_as_index, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_four_byte_as_index, null)
-          rd_ipv4_address_address                              = try(vrf.rd_ipv4_address_address, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_ipv4_address_address, null)
-          rd_ipv4_address_index                                = try(vrf.rd_ipv4_address_index, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd_ipv4_address_index, null)
+          rd = try(vrf.rd, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd, null) != null ? provider::utils::normalize_bgp_rd(
+            try(vrf.rd, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.rd)
+          ) : null
           neighbors = try(length(vrf.neighbors) == 0, true) ? null : [for neighbor in vrf.neighbors : {
             address                                   = try(neighbor.ip, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.neighbors.ip, null)
             evpn_link_bandwidth                       = try(neighbor.evpn_link_bandwidth, local.defaults.iosxr.devices.configuration.routing.bgp.vrfs.neighbors.evpn_link_bandwidth, null)
@@ -254,19 +250,20 @@ resource "iosxr_router_bgp_vrf" "router_bgp_vrf" {
   bgp_origin_as_validation_time                        = each.value.bgp_origin_as_validation_time
   bfd_minimum_interval                                 = each.value.bfd_minimum_interval
   bfd_multiplier                                       = each.value.bfd_multiplier
-  rd_auto                                              = each.value.rd_auto
-  rd_two_byte_as_number                                = each.value.rd_two_byte_as_number
-  rd_two_byte_as_index                                 = each.value.rd_two_byte_as_index
-  rd_four_byte_as_number                               = each.value.rd_four_byte_as_number
-  rd_four_byte_as_index                                = each.value.rd_four_byte_as_index
-  rd_ipv4_address_address                              = each.value.rd_ipv4_address_address
-  rd_ipv4_address_index                                = each.value.rd_ipv4_address_index
+  rd_auto                                              = try(each.value.rd.format == "auto" ? true : null, null)
+  rd_two_byte_as_number                                = try(each.value.rd.format == "two_byte_as" ? each.value.rd.as_number : null, null)
+  rd_two_byte_as_index                                 = try(each.value.rd.format == "two_byte_as" ? each.value.rd.assigned_number : null, null)
+  rd_four_byte_as_number                               = try(each.value.rd.format == "four_byte_as" ? each.value.rd.as_number : null, null)
+  rd_four_byte_as_index                                = try(each.value.rd.format == "four_byte_as" ? each.value.rd.assigned_number : null, null)
+  rd_ipv4_address_address                              = try(each.value.rd.format == "ipv4_address" ? each.value.rd.ipv4_address : null, null)
+  rd_ipv4_address_index                                = try(each.value.rd.format == "ipv4_address" ? each.value.rd.assigned_number : null, null)
   neighbors                                            = each.value.neighbors
 
   depends_on = [
     iosxr_key_chain.key_chain,
     iosxr_route_policy.route_policy,
     iosxr_bmp_server.bmp_server,
+    iosxr_vrf.vrf,
     iosxr_router_bgp.router_bgp,
     iosxr_router_bgp_address_family.ipv4_unicast,
     iosxr_router_bgp_address_family.ipv6_unicast,

@@ -250,11 +250,11 @@ resource "iosxr_router_bgp_vrf_address_family" "ipv4_unicast" {
   redistribute_eigrp                                       = each.value.redistribute_eigrp
   redistribute_isis                                        = each.value.redistribute_isis
 
-  lifecycle {
-    replace_triggered_by = [
-      iosxr_router_bgp_vrf.router_bgp_vrf
-    ]
-  }
+  # lifecycle {
+  #   replace_triggered_by = [
+  #     iosxr_router_bgp_vrf.router_bgp_vrf
+  #   ]
+  # }
 
   depends_on = [
     iosxr_key_chain.key_chain,
@@ -525,11 +525,11 @@ resource "iosxr_router_bgp_vrf_address_family" "ipv6_unicast" {
   redistribute_eigrp                                       = each.value.redistribute_eigrp
   redistribute_isis                                        = each.value.redistribute_isis
 
-  lifecycle {
-    replace_triggered_by = [
-      iosxr_router_bgp_vrf.router_bgp_vrf
-    ]
-  }
+  # lifecycle {
+  #   replace_triggered_by = [
+  #     iosxr_router_bgp_vrf.router_bgp_vrf
+  #   ]
+  # }
 
   depends_on = [
     iosxr_key_chain.key_chain,
@@ -734,11 +734,11 @@ resource "iosxr_router_bgp_vrf_address_family" "ipv4_multicast" {
   redistribute_eigrp                            = each.value.redistribute_eigrp
   redistribute_isis                             = each.value.redistribute_isis
 
-  lifecycle {
-    replace_triggered_by = [
-      iosxr_router_bgp_vrf.router_bgp_vrf
-    ]
-  }
+  # lifecycle {
+  #   replace_triggered_by = [
+  #     iosxr_router_bgp_vrf.router_bgp_vrf
+  #   ]
+  # }
 
   depends_on = [
     iosxr_key_chain.key_chain,
@@ -944,11 +944,11 @@ resource "iosxr_router_bgp_vrf_address_family" "ipv6_multicast" {
   redistribute_eigrp                            = each.value.redistribute_eigrp
   redistribute_isis                             = each.value.redistribute_isis
 
-  lifecycle {
-    replace_triggered_by = [
-      iosxr_router_bgp_vrf.router_bgp_vrf
-    ]
-  }
+  # lifecycle {
+  #   replace_triggered_by = [
+  #     iosxr_router_bgp_vrf.router_bgp_vrf
+  #   ]
+  # }
 
   depends_on = [
     iosxr_key_chain.key_chain,
