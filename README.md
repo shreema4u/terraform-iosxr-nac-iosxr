@@ -79,6 +79,7 @@ module "iosxr" {
 | [iosxr_cli.cli_8](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/cli) | resource |
 | [iosxr_cli.cli_9](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/cli) | resource |
 | [iosxr_community_set.community_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/community_set) | resource |
+| [iosxr_control_plane.control_plane](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/control_plane) | resource |
 | [iosxr_domain.domain](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/domain) | resource |
 | [iosxr_domain_vrf.domain_vrf](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/domain_vrf) | resource |
 | [iosxr_error_disable_recovery.error_disable_recovery](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/error_disable_recovery) | resource |
@@ -98,6 +99,7 @@ module "iosxr" {
 | [iosxr_flow_monitor_map.flow_monitor_map](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/flow_monitor_map) | resource |
 | [iosxr_flow_sampler_map.flow_sampler_map](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/flow_sampler_map) | resource |
 | [iosxr_fpd.fpd](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/fpd) | resource |
+| [iosxr_ftp.ftp](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ftp) | resource |
 | [iosxr_gnmi.gnmi](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/gnmi) | resource |
 | [iosxr_hostname.hostname](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/hostname) | resource |
 | [iosxr_interface_bundle_ether.bundle_ether](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/interface_bundle_ether) | resource |
@@ -124,6 +126,7 @@ module "iosxr" {
 | [iosxr_line_console.line_console](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/line_console) | resource |
 | [iosxr_line_default.line_default](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/line_default) | resource |
 | [iosxr_line_template.line_template](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/line_template) | resource |
+| [iosxr_linux_networking.linux_networking](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/linux_networking) | resource |
 | [iosxr_lldp.lldp](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/lldp) | resource |
 | [iosxr_logging.logging](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/logging) | resource |
 | [iosxr_logging_vrf.logging_vrf](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/logging_vrf) | resource |
@@ -131,6 +134,8 @@ module "iosxr" {
 | [iosxr_monitor_session.monitor_session](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/monitor_session) | resource |
 | [iosxr_mpls_oam.mpls_oam](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/mpls_oam) | resource |
 | [iosxr_mpls_traffic_eng.mpls_traffic_eng](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/mpls_traffic_eng) | resource |
+| [iosxr_netconf_agent_tty.netconf_agent_tty](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/netconf_agent_tty) | resource |
+| [iosxr_netconf_yang_agent.netconf_yang_agent](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/netconf_yang_agent) | resource |
 | [iosxr_ntp.ntp](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ntp) | resource |
 | [iosxr_ospf_area_set.ospf_area_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ospf_area_set) | resource |
 | [iosxr_pce.pce](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/pce) | resource |
@@ -201,11 +206,17 @@ module "iosxr" {
 | [iosxr_ssh.ssh](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ssh) | resource |
 | [iosxr_tacacs_server.tacacs_server](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/tacacs_server) | resource |
 | [iosxr_tag_set.tag_set](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/tag_set) | resource |
+| [iosxr_telemetry_model_driven.telemetry_model_driven](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/telemetry_model_driven) | resource |
 | [iosxr_telnet.telnet](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/telnet) | resource |
+| [iosxr_tftp_client.tftp_client](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/tftp_client) | resource |
+| [iosxr_tftp_server.tftp_server](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/tftp_server) | resource |
+| [iosxr_tpa.tpa](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/tpa) | resource |
 | [iosxr_vrf.vrf](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/vrf) | resource |
 | [iosxr_vty_pool.vty_pool](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/vty_pool) | resource |
+| [iosxr_xml_agent.xml_agent](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/xml_agent) | resource |
 | [terraform_data.bundle_ether_flow_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [terraform_data.bundle_ether_subinterface_flow_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
+| [terraform_data.control_plane_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [terraform_data.ethernet_flow_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [terraform_data.ethernet_subinterface_flow_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [terraform_data.segment_routing_v6_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
