@@ -31,7 +31,7 @@ locals {
           permission             = try(entry.action, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.action, null)
           prefix                 = try(entry.prefix, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.prefix, null)
           zone                   = try(entry.zone, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.zone, 0)
-          mask                   = try(entry.mask, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.mask, null)
+          mask                   = try(entry.length, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.length, null)
           match_prefix_length_eq = try(entry.exact_length, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.exact_length, null)
           match_prefix_length_ge = try(entry.min_length, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.min_length, null)
           match_prefix_length_le = try(entry.max_length, local.defaults.iosxr.devices.configuration.prefix_lists.ipv6.entries.max_length, null)
