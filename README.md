@@ -108,8 +108,10 @@ module "iosxr" {
 | [iosxr_interface_loopback.loopback](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/interface_loopback) | resource |
 | [iosxr_interface_tunnel_ip.tunnel_ip](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/interface_tunnel_ip) | resource |
 | [iosxr_interface_tunnel_te.tunnel_te](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/interface_tunnel_te) | resource |
+| [iosxr_ipv4_access_list.ipv4_access_list](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ipv4_access_list) | resource |
 | [iosxr_ipv4_access_list_options.ipv4_access_list_options](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ipv4_access_list_options) | resource |
 | [iosxr_ipv4_prefix_list.ipv4_prefix_list](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ipv4_prefix_list) | resource |
+| [iosxr_ipv6_access_list.ipv6_access_list](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ipv6_access_list) | resource |
 | [iosxr_ipv6_access_list_options.ipv6_access_list_options](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ipv6_access_list_options) | resource |
 | [iosxr_ipv6_prefix_list.ipv6_prefix_list](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/ipv6_prefix_list) | resource |
 | [iosxr_key_chain.key_chain](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/key_chain) | resource |
