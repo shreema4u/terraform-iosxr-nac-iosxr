@@ -185,7 +185,10 @@ module "iosxr" {
 | [iosxr_router_vrrp_interface_ipv4.router_vrrp_interface_ipv4](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/router_vrrp_interface_ipv4) | resource |
 | [iosxr_router_vrrp_interface_ipv6.router_vrrp_interface_ipv6](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/router_vrrp_interface_ipv6) | resource |
 | [iosxr_segment_routing.segment_routing](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/segment_routing) | resource |
+| [iosxr_segment_routing_mapping_server.segment_routing_mapping_server](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/segment_routing_mapping_server) | resource |
 | [iosxr_segment_routing_te.segment_routing_te](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/segment_routing_te) | resource |
+| [iosxr_segment_routing_te_on_demand_color.segment_routing_te_on_demand_color](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/segment_routing_te_on_demand_color) | resource |
+| [iosxr_segment_routing_te_policy.segment_routing_te_policy](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/segment_routing_te_policy) | resource |
 | [iosxr_segment_routing_v6.segment_routing_v6](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/segment_routing_v6) | resource |
 | [iosxr_service_timestamps.service_timestamps](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/service_timestamps) | resource |
 | [iosxr_snmp_server.snmp_server](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/snmp_server) | resource |
@@ -197,6 +200,7 @@ module "iosxr" {
 | [iosxr_telnet.telnet](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/telnet) | resource |
 | [iosxr_vrf.vrf](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/vrf) | resource |
 | [iosxr_vty_pool.vty_pool](https://registry.terraform.io/providers/CiscoDevNet/iosxr/0.7.1/docs/resources/vty_pool) | resource |
+| [terraform_data.segment_routing_v6_replace](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 ## Modules
 
 | Name | Source | Version |
